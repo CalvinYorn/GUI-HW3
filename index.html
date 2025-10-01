@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Multplication Table</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Multiplication Table</h1>
+    </header>
+    <div class = "input-table">
+        <form id="tableForm">
+            <label for="minRow"><h2>Minimum Value for Row (-50 to 50)</h2></label>
+            <input type="number" id="minRow" name="minRow" value="" min="-50" max="50" placeholder="Insert value">
+
+            <label for="maxRow"><h2>Maximum Value for Row (-50 to 50)</h2></label>
+            <input type="number" id="maxRow" name="maxRow" value="" min="-50" max="50" placeholder="Insert value">
+
+            <label for="minCol"><h2>Minimum Value for Column (-50 to 50)</h2></label>
+            <input type="number" id="minCol" name="minCol" value="" min="-50" max="50" placeholder="Insert value">
+
+            <label for="maxCol"><h2>Maximum Value for Column (-50 to 50)</h2></label>
+            <input type="number" id="maxCol" name="maxCol" value="" min="-50" max="50" placeholder="Insert value">
+
+            <div class="submitForm">
+                <button type="submit" id="subButton">Generate Table</button>
+            </div>
+        </form>
+    </div>
+    <div id="results">
+    </div>
+</body>
