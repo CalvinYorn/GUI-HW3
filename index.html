@@ -2,34 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Multplication Table</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic Multiplication Table</title>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1>Dynamic Multiplication Table</h1>
-    </header>
-    <div class = "input-table">
-        <form id="tableForm">
-            <label for="minRow"><h2>Minimum Value for Row (-50 to 50)</h2></label>
-            <input type="number" id="minRow" name="minRow" value="" min="-50" max="50" placeholder="Insert value">
+    <div class="container my-5"> <!--container: fixed, margin on Y-axis set to 5-->
 
-            <label for="maxRow"><h2>Maximum Value for Row (-50 to 50)</h2></label>
-            <input type="number" id="maxRow" name="maxRow" value="" min="-50" max="50" placeholder="Insert value">
+        <header class="text-center mb-4 pb-3 border-bottom"> <!--text centered horizontally, margin bottom spaced,m padding-bottom, add bottom border-->
+            <h1 class="display-5">Dynamic Multiplication Table</h1> <!--heading size and style-->
+        </header>
 
-            <label for="minCol"><h2>Minimum Value for Column (-50 to 50)</h2></label>
-            <input type="number" id="minCol" name="minCol" value="" min="-50" max="50" placeholder="Insert value">
+        <form id="table-form" class="p-4 bg-light rounded shadow-sm"> <!--padding all around, background, rounded around corners, add small shadow-->
+            <div class="row g-3"> <!--makes horizontal flexbox row, gutter spacing (space between columns)-->
+                <div class="col-md-6 col-lg-3"> <!--column sizes for screen size breakpoints-->
+                    <label for="minRow" class="form-label fs-5">Min Row (Multiplicand):</label> <!--styling for labels, font-size-->
+                    <input type="number" id="minRow" class="form-control" name="minRow" value="" min="-50" max="50" placeholder="Start value"> <!--form control-->
+                </div>
 
-            <label for="maxCol"><h2>Maximum Value for Column (-50 to 50)</h2></label>
-            <input type="number" id="maxCol" name="maxCol" value="" min="-50" max="50" placeholder="Insert value">
+                <div class="col-md-6 col-lg-3"> <!--column sizes for screen size breakpoints-->
+                    <label for="maxRow" class="form-label fs-5">Max Row (Multiplicand):</label>
+                    <input type="number" id="maxRow" class="form-control" name="maxRow" value="" min="-50" max="50" placeholder="End value">
+                </div>
 
-            <div class="submitForm">
-                <button type="submit" id="subButton">Generate Table</button>
+                <div class="col-md-6 col-lg-3"><!--column sizes for screen size breakpoints-->
+                    <label for="minCol" class="form-label fs-5">Min Column (Multiplier):</label>
+                    <input type="number" id="minCol" class="form-control" name="minCol" value="" min="-50" max="50" placeholder="Start value">
+                </div>
+
+                <div class="col-md-6 col-lg-3"><!--column sizes for screen size breakpoints-->
+                    <label for="maxCol" class="form-label fs-5">Max Column (Multiplier):</label>
+                    <input type="number" id="maxCol" class="form-control" name="maxCol" value="" min="-50" max="50" placeholder="End value">
+                </div>
+
+                <div class="col-12 mt-4"> <!--full width column, margin-top spacing-->
+                    <button type="submit" id="subButton" class="btn btn-primary btn-lg w-100">Generate Table</button> <!--button, blue primary button, large, full width-->
+                </div>
             </div>
         </form>
+
+        <div id="error-message" class="alert alert-danger mt-4" role="alert" style="display: none;"> <!--alert styled, red danger color, margin top-->
+        </div>
+        <h2 class="mt-5 mb-3 text-center">Multiplication Result</h2>
+        <div id="table-container" class="border rounded shadow-sm mt-5 mb-5 p-3">
+            <!-- Responsive wrapper for the table -->
+            <div class="table-responsive">
+                <p class="text-center text-muted p-4">Enter four values (-50 to 50) and click 'Generate Table' to begin.</p>
+            </div>
+        </div>
+        
     </div>
-    <div id="results">
-    </div>
+    <!--Bootstrap JS Link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script> 
 </body>
+</html>
